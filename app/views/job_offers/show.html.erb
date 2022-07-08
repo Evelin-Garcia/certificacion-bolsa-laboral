@@ -35,5 +35,19 @@
   <%= @job_offer.regiones %>
 </p>
 
+<hr>
+<br>
+<p><strong>Postulantes:</strong></p>
+<ul>
+    <% if @job_offer.candidates %>
+        <% @job_offer.candidates.each do |candidate|%>
+            <li><strong><%= candidate.id %>: </strong><%= "#{candidate.first_name} #{candidate.last_name}" %></li>
+        <% end %>
+    <% else %>
+        <% 'No Candidates Added!!!'%>
+    <% end %>
+</ul>
+<%= link_to 'Postular', new_job_offer_candidate_path(@job_offer) %>
+<br>
 <%= link_to 'Edit', edit_job_offer_path(@job_offer) %> |
 <%= link_to 'Back', job_offers_path %>

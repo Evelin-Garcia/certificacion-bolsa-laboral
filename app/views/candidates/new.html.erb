@@ -1,0 +1,44 @@
+<h1>Agregar Postulantes a Ofertas Laborales</h1>
+
+<%= form_with(model:[@job_offer, @candidate]) do |form| %>
+    <div class="field">
+        <%= form.label :Rut %>
+        <%= form.text_field :rut %>
+    </div>
+
+    <div class="field">
+        <%= form.label :Nombre %>
+        <%= form.text_field :nombre %>
+    </div>
+
+    <div class="field">
+        <%= form.label :Fecha_Nacimiento %>
+        <%= form.date_field :fecha_nacimiento %>
+    </div>
+
+    <div class="field">
+        <%= form.label :Género %>
+        <%= form.text_field :genero %>
+    </div>
+
+    <div class="field">
+        <%= form.label :Teléfono %>
+        <%= form.number_field :telefono %>
+    </div>
+
+    <div class="field">
+        <%= form.label :Email %>
+        <%= form.text_field :email %>
+    </div>
+
+    <div class="field">
+        <%= form.label :Contraseña %>
+        <%= form.text_field :contraseña %>
+    </div>
+
+    <br>
+    <div class="field">
+        <%= form.submit %>
+    </div>
+<% end %>
+<%= link_to 'Back', job_offers_path %>
