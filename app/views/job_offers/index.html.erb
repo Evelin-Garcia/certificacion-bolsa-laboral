@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div>
+    <nav class="navbar navbar-expand-sm bg-secondary navbar-light">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+
+        </li>
+        <li class="nav-item">
+
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="row">
+    <div class="col-12">
+<br>
+<h1>Ofertas Laborales</h1>
+
+<div class="table-responsive-lg">
+<table class="table table-striped table-sm">
+  <thead>
+    <tr>
+      <th>Cargo</th>
+      <th>Descripcion</th>
+      <th>Vacantes</th>
+      <th>Rango salarial</th>
+      <th>Fecha inicio</th>
+      <th>Modalidad</th>
+      <th>Regiones</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @job_offers.each do |job_offer| %>
+      <tr>
+        <td><%= job_offer.cargo %></td>
+        <td><%= job_offer.descripcion %></td>
+        <td><%= job_offer.vacantes %></td>
+        <td><%= job_offer.rango_salarial %></td>
+        <td><%= job_offer.fecha_inicio %></td>
+        <td><%= job_offer.modalidad %></td>
+        <td><%= job_offer.regiones %></td>
+        <td><%= link_to 'Detalles', job_offer, class: 'btn btn-outline-success' %></td>
+        <td><%= link_to 'Editar', edit_job_offer_path(job_offer), class: 'btn btn-outline-warning' %></td>
+        <td><%= link_to 'Eliminar', job_offer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+<%= link_to 'New Job Offer', new_job_offer_path %>
+    </div>
+  </div>
+</div

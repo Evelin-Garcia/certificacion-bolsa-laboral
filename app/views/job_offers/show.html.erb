@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cargo:</strong>
+  <%= @job_offer.cargo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @job_offer.descripcion %>
+</p>
+
+<p>
+  <strong>Vacantes:</strong>
+  <%= @job_offer.vacantes %>
+</p>
+
+<p>
+  <strong>Rango salarial:</strong>
+  <%= @job_offer.rango_salarial %>
+</p>
+
+<p>
+  <strong>Fecha inicio:</strong>
+  <%= @job_offer.fecha_inicio %>
+</p>
+
+<p>
+  <strong>Modalidad:</strong>
+  <%= @job_offer.modalidad %>
+</p>
+
+<p>
+  <strong>Regiones:</strong>
+  <%= @job_offer.regiones %>
+</p>
+
+<%= link_to 'Edit', edit_job_offer_path(@job_offer) %> |
+<%= link_to 'Back', job_offers_path %>

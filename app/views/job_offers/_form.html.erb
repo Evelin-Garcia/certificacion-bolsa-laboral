@@ -1,0 +1,52 @@
+<%= form_with(model: job_offer) do |form| %>
+  <% if job_offer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job_offer.errors.count, "error") %> prohibited this job_offer from being saved:</h2>
+
+      <ul>
+        <% job_offer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cargo %>
+    <%= form.text_field :cargo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_area :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vacantes %>
+    <%= form.number_field :vacantes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rango_salarial %>
+    <%= form.text_field :rango_salarial %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_inicio %>
+    <%= form.date_select :fecha_inicio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modalidad %>
+    <%= form.text_field :modalidad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :regiones %>
+    <%= form.text_field :regiones %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
