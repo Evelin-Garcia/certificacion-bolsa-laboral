@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  get '/home', to: 'pages#home'
+  get '/job_offers', to: 'job_offers#index'
+  devise_for :users
+root 'pages#home'
   resources :job_offers
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get '/Home', to: 'pages#home'
-  root 'pages#home'
-end
+  end
