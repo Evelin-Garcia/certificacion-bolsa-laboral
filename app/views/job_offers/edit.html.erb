@@ -1,6 +1,18 @@
-<h1>Editing Job Offer</h1>
+<br><br>
+<nav class="navbar navbar-expand-sm bg-secondary navbar-light">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <%= link_to 'Home', home_path, class: 'btn btn-secondary'%>
+        </li>
+      </ul>
+</nav>
+<div class="container">
 
+<div class="row">
+  <div class="col-6">
+
+<br>
+<h1>Editar Oferta Laboral</h1>
 <%= render 'form', job_offer: @job_offer %>
 
-<%= link_to 'Show', @job_offer %> |
-<%= link_to 'Back', job_offers_path %>
+<%= link_to 'Ver', @job_offer, class: "btn btn-info mt-3" %>

@@ -1,5 +1,21 @@
-<p id="notice"><%= notice %></p>
-
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+        <div>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <%= link_to 'Home', home_path, class: 'btn btn-secondary'%>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to 'Postular', new_job_offer_candidate_path(@job_offer), class: "btn btn-info" %>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+<br>
+<h1>DETALLES DE LA OFERTA</h1>
 <p>
   <strong>Cargo:</strong>
   <%= @job_offer.cargo %>
@@ -31,23 +47,23 @@
 </p>
 
 <p>
-  <strong>Regiones:</strong>
+  <strong>Región:</strong>
   <%= @job_offer.regiones %>
 </p>
-
+<br>
+<%= link_to 'Postular', new_job_offer_candidate_path(@job_offer), class: "btn btn-info"%>
 <hr>
 <br>
-<p><strong>Postulantes:</strong></p>
+<p><strong>POSTULANTES:</strong></p>
 <ul>
     <% if @job_offer.candidates %>
         <% @job_offer.candidates.each do |candidate|%>
-            <li><strong><%= candidate.id %>: </strong><%= "#{candidate.first_name} #{candidate.last_name}" %></li>
+            <li><strong><%= candidate.id %>:
+            <p><b>Nombre:</b> </strong><%= "#{candidate.nombre}" %></li>
         <% end %>
     <% else %>
         <% 'No Candidates Added!!!'%>
     <% end %>
 </ul>
-<%= link_to 'Postular', new_job_offer_candidate_path(@job_offer) %>
+
 <br>
-<%= link_to 'Edit', edit_job_offer_path(@job_offer) %> |
-<%= link_to 'Back', job_offers_path %>

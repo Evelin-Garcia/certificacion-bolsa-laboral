@@ -1,5 +1,62 @@
-<h1>New Job Offer</h1>
+<br><br>
+<nav class="navbar navbar-expand-sm bg-secondary navbar-light">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <%= link_to 'Home', home_path, class: 'btn btn-secondary'%>
+        </li>
+      </ul>
+</nav>
+<div class="container">
 
-<%= render 'form', job_offer: @job_offer %>
+<div class="row">
+  <div class="col-6">
 
-<%= link_to 'Back', job_offers_path %>
+<br>
+<h1>Crear Nueva Oferta Laboral</h1>
+<%= form_with model: JobOffer.new do |f| %>
+
+  <div class="form-check" >
+    <%= f.label :cargo, "Cargo" %>
+    <%= f.text_field :cargo, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-check" >
+    <%= f.label :descripcion, "Descripción" %>
+    <%= f.text_field :descripcion, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-check" >
+    <%= f.label :vacantes, "Vacantes" %>
+    <%= f.number_field :vacantes, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-check" >
+    <%= f.label :rango_salarial, "Rango Salarial" %>
+    <%= f.text_field :rango_salarial, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-check" >
+    <%= f.label :fecha_inicio, "Fecha Inicio" %>
+    <%= f.date_field :fecha_inicio, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-check" >
+    <%= f.label :modalidad, "Modalidad" %>
+    <%= f.text_field :modalidad, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-check" >
+    <%= f.label :regiones, "Región" %>
+    <%= f.text_field :regiones, class: 'form-control' %>
+  </div>
+<br>
+  <div class="form-check" >
+    <%= f.submit "Crear Oferta", class: "btn btn-info mt-3" %>
+  </div>
+  <br>
+<% end %>
+</div>
+  </div>
+  </div>
+
+

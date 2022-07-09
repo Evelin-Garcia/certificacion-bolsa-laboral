@@ -10,19 +10,38 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <% if user_signed_in? %>
-            <div>
-                <p>Bienvenido <%= current_user.email %>!!</p>
-                <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+  <body style="background-color:OldLace;">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <br><br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="col-12">
+
+        <% if user_signed_in? %>
+                <p><b>Bienvenido: <%= current_user.email %>!!</b></p>
+                <%= link_to 'Salir', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+            <div class="text-right"><%= link_to 'Ir Ofertas Laborales', job_offers_path, class: 'btn btn-info' %></div>
             </div>
         <% else %>
             <div>
-                <%= link_to 'Sign up', new_user_registration_path %> |
-                <%= link_to 'Log in', new_user_session_path %>
-            </div>
+              <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+              <ul class="navbar-nav">
+              <li class="nav-item active">
+              <%= link_to 'Home', home_path, class: 'btn btn-secondary'%>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Registrarse", new_user_registration_path, class: 'btn btn-dark' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Ingresar", new_user_session_path, class: 'btn btn-dark' %>
+              </li>
+            </ul>
+            </nav>
+          </div>
+        </div>
         <% end %>
     <%= yield %>
   </body>
