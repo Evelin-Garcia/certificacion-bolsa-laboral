@@ -59,13 +59,21 @@ class JobOffersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_job_offer
-      @job_offer = JobOffer.find(params[:id])
-    end
+
+  def set_job_offer
+    @job_offer = JobOffer.find(params[:id])
+  end
 
     # Only allow a list of trusted parameters through.
-    def job_offer_params
-      params.require(:job_offer).permit(:cargo, :descripcion, :vacantes, :rango_salarial, :fecha_inicio, :modalidad, :regiones)
-    end
+  def job_offer_params
+    params.require(:job_offer).permit(
+      :cargo,
+      :descripcion,
+      :vacantes,
+      :rango_salarial,
+      :fecha_inicio,
+      :modalidad,
+      :regiones
+    )
+  end
 end
