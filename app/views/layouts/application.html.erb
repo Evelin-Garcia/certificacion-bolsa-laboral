@@ -33,8 +33,11 @@
               <%= link_to 'Home', home_path, class: 'btn btn-secondary'%>
               </li>
               <li class="nav-item">
+                <%= link_to 'Ofertas Laborales', job_offers_path, class: 'btn btn-dark' %>
+                <%= link_to '',home_path, class: 'btn btn-dark' %>
                 <%= link_to "Registro Empresa", new_user_registration_path, class: 'btn btn-dark' %>
                 <%= link_to "Registro Postulante", new_user_registration_path, class: 'btn btn-dark' %>
+
               </li>
               <li class="nav-item">
                 <%= link_to "Ingresar", new_user_session_path, class: 'btn btn-dark' %>
