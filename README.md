@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Proyecto Bolsa de Empleo creado con bbdd Postgresql.
+El proyecto cuenta con 2 usuarios creados que poblan la lista de Ofertas Laborales con rol de Empresa (ver, crear, editar y eliminar registros)
+user1@gmail.com password 123456
+user2@gmail.com password 123456
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Usuarios registrados y logueados pueden solo ver estas ofertas y llenar formulario de postulación.
