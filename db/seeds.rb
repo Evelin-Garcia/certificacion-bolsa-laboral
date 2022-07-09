@@ -9,6 +9,7 @@ puts 'creando ofertas'
 
 JobOffer.destroy_all
 
+10.times do
 JobOffer.create(
   [
     {
@@ -65,3 +66,4 @@ JobOffer.create(
 )
 
 puts 'ofertas creadas!!!'
+end
