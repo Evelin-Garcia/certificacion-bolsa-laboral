@@ -13,6 +13,17 @@
   <body>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+      <% if user_signed_in? %>
+            <div>
+                <p>Bienvenido <%= current_user.email %>!!</p>
+                <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+            </div>
+        <% else %>
+            <div>
+                <%= link_to 'Sign up', new_user_registration_path %> |
+                <%= link_to 'Log in', new_user_session_path %>
+            </div>
+        <% end %>
     <%= yield %>
   </body>
 </html>

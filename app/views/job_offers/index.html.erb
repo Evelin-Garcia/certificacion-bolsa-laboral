@@ -42,9 +42,13 @@
         <td><%= job_offer.fecha_inicio %></td>
         <td><%= job_offer.modalidad %></td>
         <td><%= job_offer.regiones %></td>
+        <% if user_signed_in? %>
         <td><%= link_to 'Detalles', job_offer, class: 'btn btn-outline-success' %></td>
+        <% end %>
+        <% if (user_signed_in? && (current_user == job_offer.user)) %>
         <td><%= link_to 'Editar', edit_job_offer_path(job_offer), class: 'btn btn-outline-warning' %></td>
         <td><%= link_to 'Eliminar', job_offer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

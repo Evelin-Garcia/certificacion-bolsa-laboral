@@ -1,4 +1,5 @@
 class JobOffersController < ApplicationController
+  before_action :authenticate_user!, except: %i[index]
   before_action :set_job_offer, only: %i[ show edit update destroy ]
 
   # GET /job_offers or /job_offers.json
@@ -21,7 +22,7 @@ class JobOffersController < ApplicationController
 
   # POST /job_offers or /job_offers.json
   def create
-    @job_offer = JobOffer.new(job_offer_params)
+    @job_offer = current_user.job_offers.build(job_offer_params)
 
     respond_to do |format|
       if @job_offer.save
