@@ -4,7 +4,7 @@ class JobOffersController < ApplicationController
 
   # GET /job_offers or /job_offers.json
   def index
-    @job_offers = JobOffer.order(:fecha_inicio).page(params[:page])
+    @job_offers = JobOffer.order(:fecha_inicio).page(params[:page]).per(9)
   end
 
   # GET /job_offers/1 or /job_offers/1.json

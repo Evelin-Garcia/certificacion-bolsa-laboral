@@ -9,7 +9,7 @@ puts 'creando ofertas'
 
 JobOffer.destroy_all
 
-10.times do
+5.times do
 JobOffer.create(
   [
     {

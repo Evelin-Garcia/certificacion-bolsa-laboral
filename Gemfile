@@ -5,6 +5,7 @@ ruby '3.0.3'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
+gem 'kaminari-bootstrap'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'
